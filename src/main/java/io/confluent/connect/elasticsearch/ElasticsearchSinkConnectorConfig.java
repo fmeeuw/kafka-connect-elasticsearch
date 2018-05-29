@@ -171,7 +171,7 @@ public class ElasticsearchSinkConnectorConfig extends AbstractConfig {
     ).define(
         CONNECTION_USERNAME_CONFIG,
         Type.STRING,
-        null,
+        "",
         Importance.MEDIUM,
         CONNECTION_USERNAME_DOC,
         group,
@@ -181,7 +181,7 @@ public class ElasticsearchSinkConnectorConfig extends AbstractConfig {
     ).define(
         CONNECTION_PASSWORD_CONFIG,
         Type.STRING,
-        null,
+        "",
         Importance.MEDIUM,
         CONNECTION_PASSWORD_DOC,
         group,
