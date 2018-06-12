@@ -134,10 +134,10 @@ public class JestElasticsearchClient implements ElasticsearchClient {
           .connTimeout(connTimeout)
           .readTimeout(readTimeout)
           .multiThreaded(true);
-      if (username != null && !username.isEmpty() && password != null && !password.isEmpty()) {
+      if (username != null && password != null) {
         builder.defaultCredentials(username, password.value())
-            .preemptiveAuthTargetHosts(address.stream()
-                .map(addr -> HttpHost.create(addr)).collect(Collectors.toSet()));
+                .preemptiveAuthTargetHosts(address.stream()
+                        .map(addr -> HttpHost.create(addr)).collect(Collectors.toSet()));
       }
       HttpClientConfig httpClientConfig = builder.build();
       factory.setHttpClientConfig(httpClientConfig);
